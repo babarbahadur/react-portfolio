@@ -1,3 +1,4 @@
+import colors from "./src/config/colors";
 import type { Config } from "tailwindcss";
 
 export default {
@@ -9,9 +10,20 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        black: colors.black,
+        darkGrey: colors.darkGrey,
+        lightGrey: colors.lightGrey,
+        bgGrey: colors.bgGrey,
+        green: colors.green,
       },
+      fontSize: {
+        '16': "16px",
+        '20': "20px"
+      },
+      fontFamily: {
+        syne: ['Syne', 'sans-serif'],
+      },
+
     },
   },
   plugins: [],
