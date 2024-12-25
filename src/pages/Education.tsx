@@ -24,7 +24,7 @@ const Education = () => {
   const EducationCard = ({ name, logo, major, date, link }: EducationProps) => {
     return (
       <AnimationTemplate>
-        <div className='flex flex-col h-full mb-5 p-4 outline outline-lightGrey outline-[.5px] rounded-lg mt-10'>
+        <div className="flex flex-col h-full mb-5 p-4 outline outline-lightGrey outline-[.5px] rounded-lg mt-10 hover:animate-popout">
           <a
             href={link}
             target="_blank"
@@ -55,14 +55,14 @@ const Education = () => {
   const CertificateCard = ({ name, logo, issuer, date, credentials, link }: CertificateProps) => {
     return (
       <AnimationTemplate>
-        <div className="flex flex-col h-full mb-5 p-4 outline outline-lightGrey outline-[.5px] rounded-lg mt-2 relative animate-fade-in">
+        <div className="flex flex-col h-full mb-5 p-4 outline outline-lightGrey outline-[.5px] rounded-lg mt-2 relative hover:animate-popout">
           <a
             href={link}
             target="_blank"
             rel="noopener noreferrer"
             className="absolute top-3 right-3"
           >
-            <MdArrowOutward size={20} className='text-darkGrey' />
+            <MdArrowOutward size={20} className='text-darkGrey hover:text-black' />
           </a>
           <Image
             src={logo}

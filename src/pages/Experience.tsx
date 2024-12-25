@@ -18,7 +18,7 @@ const Experience = () => {
   const Company = ({ name, logo, position, from, to, description, link }: CompanyProps) => {
       return(
         <AnimationTemplate>
-          <div className ='flex mb-5 items-start p-4 bg-white rounded-lg'>
+          <div className='flex mb-5 items-start p-4 bg-white rounded-lg hover:animate-popout'>
             <a
               href={link}
               target="_blank"

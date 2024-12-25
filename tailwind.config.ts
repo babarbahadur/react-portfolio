@@ -28,7 +28,21 @@ export default {
       fontFamily: {
         syne: ['Syne', 'sans-serif'],
       },
-
+      keyframes: {
+        popout: {
+          '0%': {
+            transform: 'scale(1)',
+            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+          },
+          '100%': {
+            transform: 'scale(1.01)',
+            boxShadow: '0 5px 16px rgba(0, 0, 0, 0.1)',
+          },
+        },
+      },
+      animation: {
+        popout: 'popout 0.3s ease forwards',
+      },
     },
   },
   plugins: [],
