@@ -5,6 +5,7 @@ import React from 'react';
 import { FaGithub, FaJs, FaLinkedinIn, FaReact, FaStackOverflow, FaSwift } from 'react-icons/fa';
 import { SiReactquery, SiRedux, SiTypescript } from 'react-icons/si';
 import { VscAzureDevops } from "react-icons/vsc";
+import ActiveIndicator from "./ActiveIndicator";
 
 const HeroSection = () => {
 
@@ -14,6 +15,19 @@ const HeroSection = () => {
         <Icon size={15} className='mr-2' />
         <span className="text-16 font-semibold text-darkGrey font-syne">{title}</span>
       </div>
+    )
+  }
+
+  const Social = ({ link, Icon }: { link: string, Icon: React.ComponentType<{ size: number }> }) => {
+    return (
+      <a
+        href={link}
+        className="text-gray-500 hover:text-gray-800"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Icon size={20} />
+      </a>
     )
   }
 
@@ -34,25 +48,20 @@ const HeroSection = () => {
             <div className= "items-center justify-center text-center">
               <div className='mt-5 inline-flex py-3 px-12 items-center justify-center outline outline-[.5px] outline-lightGrey rounded-full'>
                 <p className="text-sm text-gray-500">Available for Work</p>
+                <ActiveIndicator />
               </div>
               <div className="flex items-center justify-center gap-4 mt-4">
-                <a href="https://github.com/babarbahadur" className="text-gray-500 hover:text-gray-800">
-                  <FaGithub size={20} />
-                </a>
-                <a href="https://www.linkedin.com/in/babarbahadur/" className="text-gray-500 hover:text-gray-800">
-                  <FaLinkedinIn size={20} />
-                </a>
-                <a href="https://stackoverflow.com/users/11246925/niaz-babar-bahadur" className="text-gray-500 hover:text-gray-800">
-                  <FaStackOverflow size={20} />
-                </a>
+                <Social Icon={FaGithub} link={'https://github.com/babarbahadur'} />
+                <Social Icon={FaLinkedinIn} link={'https://www.linkedin.com/in/babarbahadur/'} />
+                <Social Icon={FaStackOverflow} link={'https://stackoverflow.com/users/11246925/niaz-babar-bahadur'} />
               </div>
             </div>
           </div>
         </AnimationTemplate>
 
         {/* Right Section */}
-        <AnimationTemplate>
-          <div className="mt-8 lg:mt-0 px-10 py-20">
+        <div className="mt-8 lg:mt-0 px-10 py-20">
+          <AnimationTemplate>
             <h1 className="text-55 font-bold font-sans">Hello, I’m Babar,
               <br /> a <span className="outline outline[.5px] outline-bgGrey">Mobile App Developer</span>
               <br />based in Budapest, Hungary.
@@ -64,7 +73,9 @@ const HeroSection = () => {
             >
               Download CV
             </a>
+          </AnimationTemplate>
 
+          <AnimationTemplate>
             <div className="grid grid-cols-2 gap-4 mt-8">
               <Skill title="React Native" Icon={FaReact} />
               <Skill title="React" Icon={FaReact} />
@@ -77,8 +88,8 @@ const HeroSection = () => {
               <Skill title="Unit Testing (Jest)" Icon={FaReact} />
               <Skill title="Swift" Icon={FaSwift} />
             </div>
-          </div>
-        </AnimationTemplate>
+          </AnimationTemplate>
+        </div>
       </div>
     </section>
   );
