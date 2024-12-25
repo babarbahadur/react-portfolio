@@ -7,7 +7,7 @@ export default function AnimationTemplate({ children }: { children: React.ReactN
     <motion.div
       initial={{ y: 20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ ease: "easeInOut", duration: 0.5 }}
+      transition={{ ease: 'linear', duration: 0.75 }}
     >
       {children}
     </motion.div>
