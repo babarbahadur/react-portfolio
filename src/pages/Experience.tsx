@@ -60,7 +60,7 @@ const Experience = () => {
           <span className="text-50 font-semibold text-black font-syne">Professional Experience</span>
         </AnimationTemplate>
         <div className="flex w-full justify-center items-stretch mt-10">
-          <div className="outline outline-lightGrey outline-[.5px] rounded-md w-2/5 mr-5 p-5">
+          <div className="outline outline-lightGrey outline-[.5px] rounded-md w-1/2 mr-5 p-5">
             <Company
               name='Nilfisk'
               logo='/nilfisk.png'
@@ -89,7 +89,7 @@ const Experience = () => {
               link='https://www.ezhire.ae/'
             />
           </div>
-          <div className="outline outline-lightGrey outline-[.5px] rounded-md w-2/5 p-5">
+          <div className="outline outline-lightGrey outline-[.5px] rounded-md w-1/2 p-5">
             <Company
               name='Digitonics Labs'
               logo='/digitonics.png'
