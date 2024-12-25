@@ -29,7 +29,7 @@ const Education = () => {
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            className="block"
+            className="w-fit"
           >
             <div className="w-[50px] h-[50px] relative overflow-hidden rounded-md mb-3">
               <Image
