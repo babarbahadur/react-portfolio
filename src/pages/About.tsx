@@ -60,10 +60,10 @@ const About = () => {
         </AnimationTemplate>
 
         {/* Right Section */}
-        <div className="mt-8 lg:mt-0 px-10 py-20">
+        <div className="mt-8 lg:mt-0 px-10 pt-20">
           <AnimationTemplate>
             <h1 className="text-55 font-bold font-sans">Hello, I’m Babar,
-              <br /> a <span className="outline outline[.5px] outline-bgGrey">Mobile App Developer</span>
+              <br /><span className="outline outline[.5px] outline-bgGrey">Mobile App Developer</span>
               <br />based in Budapest, Hungary.
             </h1>
             <a

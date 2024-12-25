@@ -18,8 +18,10 @@ export default {
         green: colors.green,
       },
       fontSize: {
+        '14': "14px",
         '16': "16px",
         '20': "20px",
+        '50': '50px',
         '55': '55px',
         '80': '80px',
       },
