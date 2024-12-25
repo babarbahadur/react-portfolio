@@ -1,4 +1,7 @@
+"use client";
+
 import AnimationTemplate from "@/app/transition";
+import { motion } from "framer-motion";
 import Image from 'next/image';
 import React from 'react';
 import { FaGithub, FaJs, FaLinkedinIn, FaReact, FaStackOverflow, FaSwift } from 'react-icons/fa';
@@ -36,14 +39,21 @@ const About = () => {
         {/* Left Section */}
         <AnimationTemplate>
           <div className="text-center lg:text-left p-10 outline outline-[.5px] rounded-lg outline-bgGrey">
-            <Image
-              src="/babar.png"
-              alt="babar"
-              className="rounded-md mx-auto lg:mx-0"
-              width={600}
-              height={600}
-              priority
-            />
+            <motion.div
+              className="relative w-[600px] h-[600px] rounded-md overflow-hidden"
+              initial={{ scale: 0.95, rotate: 0 }}
+              whileHover={{ scale: 1, rotate: 0 }}
+              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+            >
+              <Image
+                src="/babar.png"
+                alt="babar"
+                className="rounded-md"
+                width={600}
+                height={600}
+                priority
+              />
+            </motion.div>
             <div className= "items-center justify-center text-center">
               <div className='mt-5 inline-flex py-3 px-12 items-center justify-center outline outline-[.5px] outline-lightGrey rounded-full'>
                 <p className="text-sm text-gray-500">Available for Work</p>
