@@ -46,7 +46,7 @@ const About = () => {
               transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
             >
               <Image
-                src="/babarr.png"
+                src="/babar.png"
                 alt="babar"
                 className="rounded-md"
                 width={600}
