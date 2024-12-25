@@ -5,9 +5,9 @@ import React from 'react';
 import { FaGithub, FaJs, FaLinkedinIn, FaReact, FaStackOverflow, FaSwift } from 'react-icons/fa';
 import { SiReactquery, SiRedux, SiTypescript } from 'react-icons/si';
 import { VscAzureDevops } from "react-icons/vsc";
-import ActiveIndicator from "./ActiveIndicator";
+import ActiveIndicator from "../components/ActiveIndicator";
 
-const HeroSection = () => {
+const About = () => {
 
   const Skill = ({ title, Icon }: { title: string, Icon: React.ComponentType<{ size: number, className: string }> }) => {
     return(
@@ -95,4 +95,4 @@ const HeroSection = () => {
   );
 };
 
-export default HeroSection;
+export default About;

@@ -58,8 +58,8 @@ const AppHeader = () => {
           <Link href="#about">
             <HeaderButton title='About' onClick={() => { }} size='standard' />
           </Link>
-          <Link href="#services">
-            <HeaderButton title='Services' onClick={() => { }} size='standard' />
+          <Link href="#experience">
+            <HeaderButton title='Experience' onClick={() => { }} size='standard' />
           </Link>
         </nav>
       </div>

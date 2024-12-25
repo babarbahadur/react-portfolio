@@ -1,6 +1,6 @@
 import AnimationTemplate from "@/app/transition";
 
-const HomeSection = () => {
+const Home = () => {
   return(
     <section id="home">
       <div className="flex flex-col items-center justify-center h-[60vh] bg-bgGrey text-center rounded-2xl p-8 mt-32">
@@ -33,4 +33,4 @@ const HomeSection = () => {
   )
 }
 
-export default HomeSection
+export default Home
