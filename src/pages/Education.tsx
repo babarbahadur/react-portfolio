@@ -107,7 +107,7 @@ const Education = () => {
               name='Sindh Muslim Govt. Science College'
               logo='/sindhmuslim.png'
               major='Fsc (Pre-Engineering)'
-              date='2013'
+              date='2015'
               link='https://en.wikipedia.org/wiki/Sindh_Muslim_Government_Science_College'
             />
           </div>
