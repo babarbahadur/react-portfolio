@@ -1,4 +1,6 @@
-import AppHeader from '../components/AppHeader'
+import HomeSection from '@/components/HomeSection';
+import AppHeader from '@/components/AppHeader';
+import AboutSection from '@/components/AboutSection';
 
 const HomePage = () => {
   return (
@@ -6,14 +8,8 @@ const HomePage = () => {
       <AppHeader />
 
       {/* Sections */}
-      <section id="home" className="h-screen bg-blue-500 text-white">
-        <h1 className="text-4xl text-center pt-40">Home Section</h1>
-      </section>
-
-      <section id="about" className="h-screen bg-red-500 text-white">
-        <h1 className="text-4xl text-center pt-40">About Section</h1>
-      </section>
-
+      <HomeSection />
+      <AboutSection />
       <section id="services" className="h-screen bg-yellow-500 text-white">
         <h1 className="text-4xl text-center pt-40">Services Section</h1>
       </section>

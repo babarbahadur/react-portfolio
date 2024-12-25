@@ -10,6 +10,7 @@ export default {
   theme: {
     extend: {
       colors: {
+        offwhite: colors.offwhite,
         black: colors.black,
         darkGrey: colors.darkGrey,
         lightGrey: colors.lightGrey,
@@ -18,7 +19,9 @@ export default {
       },
       fontSize: {
         '16': "16px",
-        '20': "20px"
+        '20': "20px",
+        '55': '55px',
+        '80': '80px',
       },
       fontFamily: {
         syne: ['Syne', 'sans-serif'],
