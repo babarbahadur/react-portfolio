@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
-const CustomCursor = () => {
+const AppCursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [cursorStyle, setCursorStyle] = useState({ x: 0, y: 0 });
   const [isHidden, setIsHidden] = useState(false);
@@ -71,4 +71,4 @@ const CustomCursor = () => {
   );
 };
 
-export default CustomCursor;
+export default AppCursor;
