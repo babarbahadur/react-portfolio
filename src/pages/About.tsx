@@ -1,4 +1,3 @@
-'use client';
 import AnimationTemplate from "@/app/transition";
 import Image from 'next/image';
 import React from 'react';
