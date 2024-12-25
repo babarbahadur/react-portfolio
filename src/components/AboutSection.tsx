@@ -18,7 +18,6 @@ const HeroSection = () => {
 
   return (
     <section id="about">
-      {/* max-w-7xl mx-auto p-6 */}
       <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between py-20">
         {/* Left Section */}
         <div className="text-center lg:text-left p-10 outline outline-[.5px] rounded-lg outline-bgGrey">
