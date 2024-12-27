@@ -7,7 +7,7 @@ import Testimonial from "@/pages/Testimonial";
 
 const HomePage = () => {
   return (
-    <div className="px-[200px]">
+    <div className="px-5 md:px-[50px] lg:px-[200px]">
       <AppHeader />
       <Home />
       <About />

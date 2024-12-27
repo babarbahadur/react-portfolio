@@ -2,23 +2,36 @@
 
 import AnimationTemplate from "@/app/transition";
 import { motion } from "framer-motion";
-import Image from 'next/image';
-import React from 'react';
-import { FaGithub, FaJs, FaLinkedinIn, FaReact, FaStackOverflow, FaSwift } from 'react-icons/fa';
-import { SiReactquery, SiRedux, SiTypescript } from 'react-icons/si';
-import { VscAzureDevops } from "react-icons/vsc";
+import React, { useEffect, useState } from 'react';
+import { FaGithub, FaLinkedinIn, FaStackOverflow } from 'react-icons/fa';
+import Lottie from "react-lottie";
 import ActiveIndicator from "../components/ActiveIndicator";
 
 const About = () => {
 
-  const Skill = ({ title, Icon }: { title: string, Icon: React.ComponentType<{ size: number, className: string }> }) => {
-    return(
-      <div className="flex items-center justify-center lg:justify-start">
-        <Icon size={15} className='mr-2' />
-        <span className="text-16 font-semibold text-darkGrey font-syne">{title}</span>
-      </div>
-    )
-  }
+  const [animationData, setAnimationData] = useState(null);
+
+  useEffect(() => {
+    fetch("/mobile.json")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to fetch animation JSON");
+        }
+        return response.json();
+      })
+      .then((data) => setAnimationData(data))
+      .catch((error) => console.error("Error loading animation:", error));
+  }, []);
+
+
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
 
   const Social = ({ link, Icon }: { link: string, Icon: React.ComponentType<{ size: number }> }) => {
     return (
@@ -40,31 +53,13 @@ const About = () => {
         <AnimationTemplate>
           <div className="text-center lg:text-left p-10 outline outline-[.5px] rounded-lg outline-bgGrey">
             <motion.div
-              className="relative w-[600px] h-[600px] rounded-md overflow-hidden"
+              className="relative w-[600px] rounded-md overflow-hidden -mt-8"
               initial={{ scale: 0.95, rotate: 0 }}
               whileHover={{ scale: 1, rotate: 0 }}
               transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
             >
-              <Image
-                src="/babar.png"
-                alt="babar"
-                className="rounded-md"
-                width={600}
-                height={600}
-                priority
-              />
+              <Lottie options={defaultOptions} />
             </motion.div>
-            <div className= "items-center justify-center text-center">
-              <div className='mt-5 inline-flex py-3 px-12 items-center justify-center outline outline-[.5px] outline-lightGrey rounded-full'>
-                <p className="text-sm text-gray-500">Available for Work</p>
-                <ActiveIndicator />
-              </div>
-              <div className="flex items-center justify-center gap-4 mt-4">
-                <Social Icon={FaGithub} link={'https://github.com/babarbahadur'} />
-                <Social Icon={FaLinkedinIn} link={'https://www.linkedin.com/in/babarbahadur/'} />
-                <Social Icon={FaStackOverflow} link={'https://stackoverflow.com/users/11246925/niaz-babar-bahadur'} />
-              </div>
-            </div>
           </div>
         </AnimationTemplate>
 
@@ -75,27 +70,36 @@ const About = () => {
               <br /><span className="outline outline[.5px] outline-bgGrey">Mobile App Developer</span>
               <br />based in Budapest, Hungary.
             </h1>
-            <a
-              href="/BabarResumeQ125.pdf"
-              download
-              className="inline-block mt-6 bg-black text-white px-6 py-3 hover:bg-white hover:text-black hover:outline hover:outline-lightGrey hover:outline-[.5px]"
-            >
-              Download CV
-            </a>
+            <div className="flex gap-5 justify-center">
+              <a
+                href="/BabarResumeQ125.pdf"
+                className="inline-block mt-6 bg-black text-white py-3 w-48 text-center hover:bg-white hover:text-black hover:outline hover:outline-lightGrey hover:outline-[.5px]"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Resume
+              </a>
+              <a
+                href="/BabarCoverQ125.pdf"
+                className="inline-block mt-6 bg-black text-white py-3 w-48 text-center hover:bg-white hover:text-black hover:outline hover:outline-lightGrey hover:outline-[.5px]"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Cover Letter
+              </a>
+            </div>
           </AnimationTemplate>
-
           <AnimationTemplate>
-            <div className="grid grid-cols-2 gap-4 mt-8">
-              <Skill title="React Native" Icon={FaReact} />
-              <Skill title="React" Icon={FaReact} />
-              <Skill title="TypeScript" Icon={SiTypescript} />
-              <Skill title="JavaScript" Icon={FaJs} />
-              <Skill title="Redux" Icon={SiRedux} />
-              <Skill title="React Querry" Icon={SiReactquery} />
-              <Skill title="CI/CD Pipelines" Icon={VscAzureDevops} />
-              <Skill title="Zustand" Icon={FaReact} />
-              <Skill title="Unit Testing (Jest)" Icon={FaReact} />
-              <Skill title="Swift" Icon={FaSwift} />
+            <div className="items-center justify-center text-center mt-5">
+              <div className='mt-5 inline-flex py-3 px-12 items-center justify-center outline outline-[.5px] outline-lightGrey rounded-full'>
+                <p className="text-sm text-gray-500">Available for Work</p>
+                <ActiveIndicator />
+              </div>
+              <div className="flex items-center justify-center gap-4 mt-8">
+                <Social Icon={FaGithub} link={'https://github.com/babarbahadur'} />
+                <Social Icon={FaLinkedinIn} link={'https://www.linkedin.com/in/babarbahadur/'} />
+                <Social Icon={FaStackOverflow} link={'https://stackoverflow.com/users/11246925/niaz-babar-bahadur'} />
+              </div>
             </div>
           </AnimationTemplate>
         </div>

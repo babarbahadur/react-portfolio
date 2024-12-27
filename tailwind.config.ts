@@ -24,6 +24,7 @@ export default {
         '50': '50px',
         '55': '55px',
         '80': '80px',
+        '150': '150px',
       },
       fontFamily: {
         syne: ['Syne', 'sans-serif'],

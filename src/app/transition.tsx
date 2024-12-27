@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
-export default function AnimationTemplate({ children }: { children: React.ReactNode }) {
+export default function AnimationTemplate({ children, className }: { children: React.ReactNode, className?: string }) {
   const [hasAnimated, setHasAnimated] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -31,6 +31,7 @@ export default function AnimationTemplate({ children }: { children: React.ReactN
       initial={{ y: 20, opacity: 0 }}
       animate={hasAnimated ? { y: 0, opacity: 1 } : {}}
       transition={{ ease: "linear", duration: 0.75 }}
+      className={className}
     >
       {children}
     </motion.div>

@@ -1,31 +1,72 @@
+"use client";
+
 import AnimationTemplate from "@/app/transition";
+import AppCounter from "@/components/AppCounter";
+import { motion } from "framer-motion";
+import Image from 'next/image';
+import { FaJs, FaReact, FaSwift } from 'react-icons/fa';
+import { SiReactquery, SiRedux, SiTypescript } from 'react-icons/si';
+import { VscAzureDevops } from "react-icons/vsc";
 
 const Home = () => {
+
+  const Skill = ({ title, Icon }: { title: string, Icon: React.ComponentType<{ size: number, className: string }> }) => {
+    return (
+      <div className="flex items-center justify-center lg:justify-start">
+        <Icon size={15} className='mr-2' />
+        <span className="text-16 font-semibold text-darkGrey font-syne">{title}</span>
+      </div>
+    )
+  }
+
   return(
     <section id="home">
-      <div className="flex flex-col items-center justify-center h-[60vh] bg-bgGrey text-center rounded-2xl p-8 mt-32">
-        <AnimationTemplate>
-          <h1 className="text-80 font-bold text-black font-syne">
-            I{`'`}M NIAZ{' '}
-            <span
-              style={{
-                WebkitTextFillColor: 'transparent',
-                WebkitTextStrokeWidth: '2px',
-                WebkitTextStrokeColor: 'black',
-              }}
-            >
-              BABAR
-            </span>{' '}
-            BAHADUR
+      <div className="flex flex-col items-center justify-center bg-bgGrey text-center rounded-2xl px-12 py-20 mt-32">
+        <AnimationTemplate className="flex flex-col items-start">
+          <h1 className="text-80 font-bold text-black font-syne">NIAZ{' '}
+            <span style={{ WebkitTextFillColor: 'transparent', WebkitTextStrokeWidth: '2px', WebkitTextStrokeColor: 'black' }}>BABAR</span>{' '}BAHADUR
           </h1>
+          <span className="text-20 font-bold text-black font-syne w-full -mt-5">Mobile Application Developer</span>
         </AnimationTemplate>
-        <AnimationTemplate>
-          <div className="flex items-center gap-4 mt-4 text-darkGrey bg-offwhite p-4 px-10">
-            <span className="text-16 font-semibold text-darkGrey font-syne">Mobile App Developer</span>
-            <span className="text-xl font-bold">•</span>
-            <span className="text-16 font-semibold text-darkGrey font-syne">React Native</span>
-            <span className="text-xl font-bold">•</span>
-            <span className="text-16 font-semibold text-darkGrey font-syne">React</span>
+        <AnimationTemplate className="flex flex-wrap justify-evenly items-stretch w-full mt-10 gap-12">
+          {/* Left Section */}
+          <div className="flex justify-between w-[30%] items-center">
+            <div className="flex-1 pl-16">
+              <AppCounter targetValue={5} />
+              <span className="text-16 font-semibold text-darkGrey font-syne mt-44">Years of Experience</span>
+            </div>
+          </div>
+
+          {/* Middle Section */}
+          <motion.div
+            className="relative flex flex-col justify-center items-center flex-1 basis-[30%] max-w-[30%] rounded-md overflow-hidden p-4"
+            initial={{ scale: 0.95, rotate: 5, opacity: 0.95, filter: 'blur(0.5px)' }}
+            whileHover={{ scale: 1, rotate: 0, opacity: 1, filter: 'blur(0px)' }}
+            transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+          >
+            <div className="w-[300px] h-[330px] relative">
+              <Image
+                src="/babar.png"
+                alt="babar"
+                className="rounded-md outline outline-white outline-4 object-cover"
+                fill
+                priority
+              />
+            </div>
+          </motion.div>
+
+          {/* Right Section */}
+          <div className="items-center justify-end flex-1 basis-[32%] max-w-[32%] grid text-left grid-cols-2 gap-x-8 py-16 -mr-5">
+            <Skill title="React Native" Icon={FaReact} />
+            <Skill title="React" Icon={FaReact} />
+            <Skill title="TypeScript" Icon={SiTypescript} />
+            <Skill title="JavaScript" Icon={FaJs} />
+            <Skill title="Redux" Icon={SiRedux} />
+            <Skill title="React Query" Icon={SiReactquery} />
+            <Skill title="CI/CD Pipelines" Icon={VscAzureDevops} />
+            <Skill title="Zustand" Icon={FaReact} />
+            <Skill title="Unit Testing (Jest)" Icon={FaReact} />
+            <Skill title="Swift" Icon={FaSwift} />
           </div>
         </AnimationTemplate>
       </div>

@@ -17,7 +17,7 @@ const Education = () => {
   const EducationCard = ({ logo, subtitle, title, desc, link, arrow, className }: EducationProps) => {
     return (
       <AnimationTemplate>
-        <div className={`flex flex-col h-full mb-5 p-4 outline outline-lightGrey outline-[.5px] rounded-lg mt-10 ${className} hover:animate-popout`}>
+        <div className={`flex flex-col h-full mb-5 p-4 outline outline-lightGrey outline-[.5px] rounded-lg ${className} hover:animate-popout`}>
           {
             arrow ?
               <a href={link} target="_blank" rel="noopener noreferrer" className="absolute top-3 right-3">
@@ -61,8 +61,8 @@ const Education = () => {
         <AnimationTemplate>
           <span className="text-50 font-semibold text-black font-syne">Education & Certifications</span>
         </AnimationTemplate>
-        <div className="flex w-full gap-x-5 justify-between items-stretch">
-          <div className="w-1/3">
+        <div className="flex flex-wrap w-full gap-x-5 justify-between items-stretch md:flex-nowrap pt-10">
+          <div className="w-full md:w-1/3">
             <EducationCard
               logo='/maju.png'
               subtitle='2019'
@@ -71,7 +71,7 @@ const Education = () => {
               link='https://jinnah.edu/'
             />
           </div>
-          <div className="w-1/3">
+          <div className="w-full md:w-1/3">
             <EducationCard
               logo='/sindhmuslim.png'
               subtitle='2015'
@@ -80,19 +80,19 @@ const Education = () => {
               link='https://en.wikipedia.org/wiki/Sindh_Muslim_Government_Science_College'
             />
           </div>
-          <div className="w-1/3">
+          <div className="w-full md:w-1/3">
             <EducationCard
               logo='/ielts.png'
               subtitle='2021'
               title='IELTS'
-              desc='CEFR Level C1' 
+              desc='CEFR Level C1'
               link='IELTS.pdf'
               arrow
             />
           </div>
         </div>
-        <div className="flex w-full gap-x-5 justify-between items-stretch">
-          <div className="w-1/3">
+        <div className="flex flex-wrap w-full gap-x-5 justify-between items-stretch md:flex-nowrap">
+          <div className="w-full md:w-1/3">
             <EducationCard
               logo='/udemy.png'
               subtitle='Udemy | 2020'
@@ -103,7 +103,7 @@ const Education = () => {
               arrow
             />
           </div>
-          <div className="w-1/3">
+          <div className="w-full md:w-1/3">
             <EducationCard
               logo='/udemy.png'
               subtitle='Udemy | 2019'
@@ -114,7 +114,7 @@ const Education = () => {
               arrow
             />
           </div>
-          <div className="w-1/3">
+          <div className="w-full md:w-1/3">
             <EducationCard
               logo='/udemy.png'
               subtitle='Udemy | 2019'

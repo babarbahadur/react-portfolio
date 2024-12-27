@@ -13,6 +13,12 @@ interface TestimonyProps {
 
 const TESTIMONIALS = [
   {
+    image: '/anonymous.png',
+    testimony: 'Niaz is a fantastic freelancer who is always ready to work. He is kind and very professional. Definitely would hire again and I recommend him to everyone who wants real fast results. Great!',
+    name: 'Unknown',
+    designation: 'Upwork Client'
+  },
+  {
     image: '/kseniia.png',
     testimony: 'I’ve been working with Niaz on MeStar.ai mobile app for 1,5 years. He is a very talented, hard-working React-Native developer. His diligence and commitment to work have greatly helped the growth of the company. I highly recommend him to anyone looking for a front-end, react-native developer.Thank you, Niaz, for all your efforts, energy, skills, and enthusiasm you were working with. Wish you all the best on your life and career journey.',
     name: 'Kseniia Starostina',
@@ -42,12 +48,6 @@ const TESTIMONIALS = [
     name: 'Lee',
     designation: 'Upwork Client'
   },
-  {
-    image: '/anonymous.png',
-    testimony: 'Niaz is a fantastic freelancer who is always ready to work. He is kind and very professional. Definitely would hire again and I recommend him to everyone who wants real fast results. Great!',
-    name: 'Unknown',
-    designation: 'Upwork Client'
-  }
 ];
 
 const Testimonial = () => {

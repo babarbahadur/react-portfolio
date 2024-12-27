@@ -25,7 +25,7 @@ const AppHeader = () => {
   }, []);
 
   return (
-    <header className={`fixed top-0 left-0 z-10 transition-all duration-300 bg-white ${isScrolled ? 'h-[80px]' : 'h-[120px]'} w-[calc(100%-400px)] ml-[200px] mr-[200px]`}>
+    <header className={`fixed top-0 left-0 z-10 transition-all duration-300 bg-white ${isScrolled ? 'h-[80px]' : 'h-[120px]'} w-full px-5 md:px-[50px] lg:px-[200px]`}>
       <div className={`flex justify-between items-center h-full transition-all duration-300`}>
         {/* Left side */}
         <Link
