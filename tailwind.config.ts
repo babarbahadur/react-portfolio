@@ -40,10 +40,14 @@ export default {
             boxShadow: '0 5px 16px rgba(0, 0, 0, 0.1)',
           },
         },
+        scroll: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
       },
       animation: {
         popout: 'popout 0.3s ease forwards',
-      },
+      }
     },
   },
   plugins: [],

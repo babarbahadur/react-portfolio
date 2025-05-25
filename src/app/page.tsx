@@ -3,6 +3,7 @@ import About from '@/pages/About';
 import Education from "@/pages/Education";
 import Experience from "@/pages/Experience";
 import Home from '@/pages/Home';
+import Portfolio from "@/pages/Portfolio";
 import Testimonial from "@/pages/Testimonial";
 
 const HomePage = () => {
@@ -13,6 +14,7 @@ const HomePage = () => {
       <About />
       <Experience />
       <Education />
+      <Portfolio />
       <Testimonial />
     </div>
   );

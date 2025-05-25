@@ -1,6 +1,7 @@
 "use client";
 
 import AnimationTemplate from "@/app/transition";
+import { useIsMobile } from "@/config/hooks";
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from 'react';
 import { FaGithub, FaLinkedinIn, FaStackOverflow } from 'react-icons/fa';
@@ -10,7 +11,8 @@ import ActiveIndicator from "../components/ActiveIndicator";
 const About = () => {
 
   const [animationData, setAnimationData] = useState(null);
-
+  const isMobile = useIsMobile();
+  
   useEffect(() => {
     fetch("/mobile.json")
       .then((response) => {
@@ -48,23 +50,27 @@ const About = () => {
 
   return (
     <section id="about">
-      <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between py-20">
+      <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between pb-20 lg:pt-20">
         {/* Left Section */}
-        <AnimationTemplate>
-          <div className="text-center lg:text-left p-10 outline outline-[.5px] rounded-lg outline-bgGrey">
-            <motion.div
-              className="relative w-[600px] rounded-md overflow-hidden -mt-8"
-              initial={{ scale: 0.95, rotate: 0 }}
-              whileHover={{ scale: 1, rotate: 0 }}
-              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-            >
-              <Lottie options={defaultOptions} />
-            </motion.div>
-          </div>
-        </AnimationTemplate>
+        {
+          !isMobile ?
+          <AnimationTemplate>
+            <div className="text-center lg:text-left p-10 outline outline-[.5px] rounded-lg outline-bgGrey">
+              <motion.div
+                className="relative w-[600px] rounded-md overflow-hidden -mt-8"
+                initial={{ scale: 0.95, rotate: 0 }}
+                whileHover={{ scale: 1, rotate: 0 }}
+                transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+              >
+                <Lottie options={defaultOptions} />
+              </motion.div>
+            </div>
+          </AnimationTemplate>
+          : null
+        }
 
         {/* Right Section */}
-        <div className="mt-8 lg:mt-0 px-10 pt-20">
+        <div className="mt-8 lg:mt-0 px-10 md:pt-20 pt-10">
           <AnimationTemplate>
             <h1 className="text-55 font-bold font-sans">Hello, I’m Babar,
               <br /><span className="outline outline[.5px] outline-bgGrey">Mobile App Developer</span>
@@ -72,7 +78,7 @@ const About = () => {
             </h1>
             <div className="flex gap-5 justify-center">
               <a
-                href="/BabarResumeQ125.pdf"
+                href="/NiazBabarResumeQ325.pdf"
                 className="inline-block mt-6 bg-black text-white py-3 w-48 text-center hover:bg-white hover:text-black hover:outline hover:outline-lightGrey hover:outline-[.5px]"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -80,7 +86,7 @@ const About = () => {
                 Resume
               </a>
               <a
-                href="/BabarCoverQ125.pdf"
+                href="/NiazBabarCoverQ325.pdf"
                 className="inline-block mt-6 bg-black text-white py-3 w-48 text-center hover:bg-white hover:text-black hover:outline hover:outline-lightGrey hover:outline-[.5px]"
                 target="_blank"
                 rel="noopener noreferrer"
